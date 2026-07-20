@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Desa Kepala Pasar</title>
+    <title>Desa Kepala Pasar</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -86,6 +86,77 @@
 
         }
 
+        #navbar{
+
+    background:transparent;
+
+}
+
+#navbar.scrolled{
+
+    background:white;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+
+}
+
+#navbar.scrolled h2{
+
+    color:#0D4F8B;
+
+}
+
+#navbar.scrolled .nav-link{
+
+    color:#334155;
+
+}
+
+.nav-link{
+
+    position:relative;
+    transition:.3s;
+
+}
+
+.nav-link::after{
+
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+
+    width:0;
+    height:2px;
+
+    background:#38bdf8;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+
+}
+
+@media (max-width:768px){
+
+section{
+
+padding-top:70px !important;
+padding-bottom:70px !important;
+
+}
+
+h1{
+
+line-height:1.2;
+
+}
+
+}
+
     </style>
 
 </head>
@@ -94,64 +165,57 @@
 
 <!-- ================= NAVBAR ================= -->
 
+<header id="navbar"
+class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+
 <div class="max-w-7xl mx-auto flex justify-between items-center px-6 h-20">
 
     <div class="flex items-center gap-4">
 
-        <img
-src="images/logo.png"
-style="width:50px; height:auto;">
+        <img src="images/logo.png"
+        class="w-12">
 
-        <h2 class="text-2xl font-bold">
+        <h2 class="text-2xl font-bold text-white">
 
-          Desa Kepala Pasar
+            Desa Kepala Pasar
 
-        </h2> 
+        </h2>
 
     </div>
-<nav class="hidden md:flex gap-8">
 
-<a href="#home">Beranda</a>
+    <nav class="hidden md:flex gap-8 font-medium">
 
-<a href="#about">Tentang</a>
+        <a href="#home" class="nav-link text-white">Beranda</a>
 
-<a href="#potensi">Potensi</a>
+        <a href="#about" class="nav-link text-white">Tentang</a>
 
-<a href="#berita">Berita</a>
+        <a href="#potensi" class="nav-link text-white">Potensi</a>
 
-<a href="#pemerintah">Pemerintahan</a>
+        <a href="#berita" class="nav-link text-white">Berita</a>
 
-<a href="#kontak">Kontak</a>
+        <a href="#pemerintah" class="nav-link text-white">Pemerintahan</a>
 
-</nav>
+        <a href="#kontak" class="nav-link text-white">Kontak</a>
 
-<button id="menuButton"
+    </nav>
 
-class="md:hidden">
+    <button id="menuButton" class="md:hidden text-white">
 
-<i data-lucide="menu"></i>
+        <i data-lucide="menu"></i>
 
-</button>
+    </button>
 
 </div>
 
-<div
-
-id="mobileMenu"
-
+<div id="mobileMenu"
 class="hidden bg-white border-t">
 
-<a href="#home" class="block p-4">Beranda</a>
-
-<a href="#about" class="block p-4">Tentang</a>
-
-<a href="#potensi" class="block p-4">Potensi</a>
-
-<a href="#berita" class="block p-4">Berita</a>
-
-<a href="#pemerintah" class="block p-4">Pemerintahan</a>
-
-<a href="#kontak" class="block p-4">Kontak</a>
+    <a href="#home" class="block p-4">Beranda</a>
+    <a href="#about" class="block p-4">Tentang</a>
+    <a href="#potensi" class="block p-4">Potensi</a>
+    <a href="#berita" class="block p-4">Berita</a>
+    <a href="#pemerintah" class="block p-4">Pemerintahan</a>
+    <a href="#kontak" class="block p-4">Kontak</a>
 
 </div>
 
@@ -193,35 +257,31 @@ Website Resmi
 
 </p>
 
-<h1 class="text-5xl md:text-7xl font-bold mb-6">
+<h1 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6">
 
 Desa Kepala Pasar
 
 </h1>
 
-<p class="italic text-xl mb-8">
+<p class="italic text-base sm:text-lg md:text-xl mb-8 px-4">
 
 "Mewujudkan Desa Maju, Mandiri dan Sejahtera"
 
 </p>
 
-<div class="flex justify-center gap-4 flex-wrap">
+<div class="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto px-6">
 
 <button
-
 onclick="openVideo()"
-
-class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold">
+class="bg-white text-blue-900 py-3 px-6 rounded-full font-semibold w-full sm:w-auto">
 
 Lihat Video
 
 </button>
 
 <a
-
 href="#potensi"
-
-class="border px-6 py-3 rounded-full">
+class="border border-white py-3 px-6 rounded-full text-center w-full sm:w-auto">
 
 Jelajahi Desa
 
@@ -246,8 +306,8 @@ class="py-20 bg-white">
 <div class="lg:col-span-2">
 
 <img
-src="images/kades2.png"
-class="rounded-3xl shadow-lg">
+src="images/kades.png"
+class="rounded-3xl shadow-lg w-full max-w-sm mx-auto">
 
 </div>
 
@@ -544,14 +604,6 @@ Desa Kepala Pasar menyimpan pesona alam pesisir yang masih asri dan belum banyak
 
 </div>
 
-
-
-
-
-
-
-<!-- ================= STATISTIK ================= -->
-
 <!-- ================= STATISTIK ================= -->
 
 <section
@@ -576,15 +628,17 @@ Data Singkat Desa Kepala Pasar
 
 </div>
 
-<div class="grid md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
 <!-- Penduduk -->
 
 <div class="bg-white/10 rounded-3xl p-10 text-center">
 
-<div class="text-5xl font-bold mb-4">
+<div
+class="counter text-5xl font-bold mb-4"
+data-target="1527">
 
-1,527
+0
 
 </div>
 
@@ -600,9 +654,11 @@ Jumlah Penduduk
 
 <div class="bg-white/10 rounded-3xl p-10 text-center">
 
-<div class="text-5xl font-bold mb-4">
+<div
+class="counter text-5xl font-bold mb-4"
+data-target="354">
 
-354
+0
 
 </div>
 
@@ -618,9 +674,12 @@ Kepala Keluarga
 
 <div class="bg-white/10 rounded-3xl p-10 text-center">
 
-<div class="text-5xl font-bold mb-4">
+<div
+class="counter text-5xl font-bold mb-4"
+data-target="21.54"
+data-suffix=" Ha">
 
-21,54 Ha
+0
 
 </div>
 
@@ -640,123 +699,197 @@ Luas Wilayah
 
 <!-- ================= BERITA ================= -->
 
-<section
-id="berita"
-class="py-20 bg-slate-50">
+<!-- ================= BERITA ================= -->
 
-<div class="max-w-6xl mx-auto px-6">
+<section id="berita" class="py-24 bg-slate-50">
 
-<div class="text-center mb-12">
+<div class="max-w-7xl mx-auto px-6">
 
-<h2 class="text-4xl font-bold">
+    <div class="text-center mb-16">
 
-Berita Desa
+        <span class="uppercase tracking-[4px] text-blue-700 font-semibold">
 
-</h2>
+            Informasi Terbaru
 
-<p class="text-slate-500 mt-2">
+        </span>
 
-Informasi terbaru Desa Kepala Pasar
+        <h2 class="text-5xl font-bold mt-3">
 
-</p>
+            Berita Desa
 
-</div>
+        </h2>
 
-<div class="grid md:grid-cols-3 gap-8">
+        <p class="text-slate-500 mt-4">
 
-<!-- Card -->
+            Ikuti berbagai kegiatan dan informasi terbaru Desa Kepala Pasar.
 
-<div class="bg-white rounded-3xl shadow">
+        </p>
 
-<img
-src="images/lokakarya.jpg"
-class="rounded-t-3xl h-56 w-full object-cover">
+    </div>
 
-<div class="p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<span class="text-blue-700 text-sm">
+        <!-- Berita 1 -->
 
-20 Juni 2026
+        <a href="berita/berita1.html"
+        class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
 
-</span>
+            <div class="overflow-hidden">
 
-<h3 class="font-bold text-xl mt-3">
+                <img src="images/lokakarya.jpg"
+                class="w-full h-60 object-cover group-hover:scale-110 transition duration-700">
 
-Lokakarya Anak KKN Universitas Bengkulu
+            </div>
 
-</h3>
+            <div class="p-7">
 
-<p class="text-slate-500 mt-3 text-justify leading-5">
+                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
 
-Mahasiswa KKN Universitas Bengkulu Desa Kepala Pasar mengadakan lokakarya bersama warga guna meningkatkan pengetahuan dan keterampilan masyarakat dalam mendukung pembangunan desa.
+                    KKN
 
-</p>
+                </span>
 
-</div>
+                <h3 class="text-2xl font-bold mt-5 group-hover:text-blue-700 transition">
 
-</div>
+                    Lokakarya KKN Universitas Bengkulu
 
-<div class="bg-white rounded-3xl shadow">
+                </h3>
 
-<img
-src="images/sosialisasihukum.jpg"
-class="rounded-t-3xl h-56 w-full object-cover">
+                <p class="text-slate-600 mt-4 leading-7">
 
-<div class="p-6">
+                    Mahasiswa KKN Universitas Bengkulu melaksanakan lokakarya
+                    bersama Pemerintah Desa Kepala Pasar sebagai langkah awal
+                    pelaksanaan program kerja.
 
-<span class="text-blue-700 text-sm">
+                </p>
 
-23 Juni 2026
+                <div class="flex justify-between items-center mt-8">
 
-</span>
+                    <span class="text-sm text-slate-500">
 
-<h3 class="font-bold text-xl mt-3">
+                        20 Juli 2026
 
-Sosialisasi Hukum
+                    </span>
 
-</h3>
+                    <span class="text-blue-700 font-semibold">
 
-<p class="text-slate-500 mt-3 text-justify leading-7">
+                        Baca →
 
-Desa Kepala Pasar menyelenggarakan sosialisasi hukum untuk meningkatkan kesadaran dan pemahaman warga mengenai pentingnya kepatuhan terhadap hukum yang berlaku.
+                    </span>
 
-</p>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </a>
 
-<div class="bg-white rounded-3xl shadow">
+        <!-- Berita 2 -->
 
-<img
-src="images/gotongroyong.jpg"
-class="rounded-t-3xl h-56 w-full object-cover">
+        <a href="berita/berita2.html"
+        class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
 
-<div class="p-6">
+            <div class="overflow-hidden">
 
-<span class="text-blue-700 text-sm">
+                <img src="images/sosialisasihukum.jpg"
+                class="w-full h-60 object-cover group-hover:scale-110 transition duration-700">
 
-24 Juni 2026
+            </div>
 
-</span>
+            <div class="p-7">
 
-<h3 class="font-bold text-xl mt-3">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
 
-Gotong Royong Bersama Anak KKN Universitas Bengkulu
+                    Hukum
 
-</h3>
+                </span>
 
-<p class="text-slate-500 mt-3 text-justify leading-5">
+                <h3 class="text-2xl font-bold mt-5 group-hover:text-green-700 transition">
 
-Warga bersama mahasiswa KKN Universitas Bengkulu melaksanakan kegiatan gotong royong sebagai wujud kepedulian dan kebersamaan dalam menjaga lingkungan desa.
+                    Sosialisasi Hukum
 
-</p>
+                </h3>
 
-</div>
+                <p class="text-slate-600 mt-4 leading-7">
 
-</div>
+                    Edukasi hukum kepada masyarakat bersama aparat penegak hukum
+                    untuk meningkatkan kesadaran hukum warga Desa Kepala Pasar.
 
-</div>
+                </p>
+
+                <div class="flex justify-between items-center mt-8">
+
+                    <span class="text-sm text-slate-500">
+
+                        23 Juli 2026
+
+                    </span>
+
+                    <span class="text-green-700 font-semibold">
+
+                        Baca →
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        <!-- Berita 3 -->
+
+        <a href="berita/berita3.html"
+        class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500">
+
+            <div class="overflow-hidden">
+
+                <img src="images/bersihpantai (1).jpg"
+                class="w-full h-60 object-cover group-hover:scale-110 transition duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm font-medium">
+
+                    Lingkungan
+
+                </span>
+
+                <h3 class="text-2xl font-bold mt-5 group-hover:text-cyan-700 transition">
+
+                    Aksi Bersih Pantai
+
+                </h3>
+
+                <p class="text-slate-600 mt-4 leading-7">
+
+                    Kolaborasi mahasiswa KKN, pemerintah desa, dan masyarakat
+                    dalam menjaga kebersihan kawasan pesisir Desa Kepala Pasar.
+
+                </p>
+
+                <div class="flex justify-between items-center mt-8">
+
+                    <span class="text-sm text-slate-500">
+
+                        26 Juli 2026
+
+                    </span>
+
+                    <span class="text-cyan-700 font-semibold">
+
+                        Baca →
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
 
 </div>
 
@@ -1339,6 +1472,79 @@ entry.target.classList.add("active");
 document.querySelectorAll(".reveal").forEach((el)=>{
 
 observer.observe(el);
+
+});
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 80) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+
+        const target = Number(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+
+        let current = 0;
+
+        const increment = target / 80;
+
+        const updateCounter = () => {
+
+            current += increment;
+
+            if (current >= target) {
+
+                counter.innerText = target + suffix;
+
+            } else {
+
+                if (target % 1 !== 0) {
+
+                    counter.innerText = current.toFixed(2);
+
+                } else {
+
+                    counter.innerText = Math.floor(current);
+
+                }
+
+                requestAnimationFrame(updateCounter);
+
+            }
+
+        };
+
+        updateCounter();
+
+        counterObserver.unobserve(counter);
+
+    });
+
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
 
 });
 
